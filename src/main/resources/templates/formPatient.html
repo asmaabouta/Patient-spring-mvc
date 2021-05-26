@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="Template1">
+
+<head>
+    <meta charset="UTF-8">
+    <title>formPatient</title>
+</head>
+<body style="background-image:url('images/img.png')">
+<div layout:fragment="contenupage">
+        <div class="container mt-5">
+            <div class="card">
+                <div class="card-header" style="font-family: Cambria;color: white;font-size: x-large;text-align: center;background-color:#007bff"><img style="width:5%;height:5% " src="images/img_2.png">Ajouter un patient</div>
+                <div class="card-body">
+        <form th:action="@{validerPatient}" method="post">
+            <div class="form-group">
+             <label class="control-label">Nom:</label>
+                <input type="text" name="nom" class="form-control" th:value="${patient.nom}">
+                <span th:errors="${patient.nom}" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label" >Date Naissance:</label>
+                <input type="date" name="dateNaissance" class="form-control" th:value="${patient.dateNaissance}">
+                <span th:errors="${patient.dateNaissance}"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label" >Score :</label>
+                <input type="number" name="score" class="form-control" th:value="${patient.score}">
+                <span th:errors="${patient.score}" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label" >Malade :</label>
+                <input type="checkbox" name="malade" th:value="${patient.malade}" >
+                <span th:errors="${patient.malade}"></span>
+            </div>
+            <button class="btn btn-primary" type="submit">Valider</button>
+        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

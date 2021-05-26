@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="Template1">
+
+<head>
+    <meta charset="UTF-8">
+    <title>formPatient</title>
+</head>
+<body style="background-image:url('images/img.png')">
+<div layout:fragment="contenupage">
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header" style="font-family: Cambria;color: white;font-size: x-large;text-align: center;background-color:#007bff"><img style="width:5%;height:5% " src="images/img_3.png">Enregistrement Effectué</div>
+            <div class="card-body">
+                   <div class="form-group">
+                       <label>ID : </label>
+                       <label th:text="${patient.id}"></label>
+                   </div>
+
+                   <div class="form-group">
+                       <label>Nom : </label>
+                       <label th:text="${patient.nom}"></label>
+                   </div>
+
+                   <div class="form-group">
+                       <label>Date Naissance : </label>
+                       <label th:text="${patient.dateNaissance}"></label>
+                   </div>
+
+                   <div class="form-group">
+                       <label>Score : </label>
+                       <label th:text="${patient.score}"></label>
+                   </div>
+
+                   <div class="form-group">
+                       <label>Malade : </label>
+                       <label th:text="${patient.malade}"></label>
+                   </div>
+                <a class="btn btn-primary" style="color: white" th:href="@{patients}"> Revenir à la liste</a>
+               </div>
+           </div>
+       </div>
+</div>
+</body>
+</html>
